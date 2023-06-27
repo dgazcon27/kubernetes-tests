@@ -4,3 +4,4 @@ metadata:
   name: sw-envs
 data:
   maxStarWarsCharacters: "10"
+  nevMessages: "This messages comes from env file kubernetes :)"

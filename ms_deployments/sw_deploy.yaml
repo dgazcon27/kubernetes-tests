@@ -24,3 +24,8 @@ spec:
                 configMapKeyRef:
                   name: sw-envs
                   key: maxStarWarsCharacters
+            - name: ENV_MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: sw-envs
+                  key: nevMessages

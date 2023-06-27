@@ -3,6 +3,7 @@ const { uniqueNamesGenerator, starWars } = require('unique-names-generator');
 const app = express();
 // Get maximum character from ENVs else return 5 character
 const MAX_STAR_WARS_CHARACTERS = process.env.MAX_STAR_WARS_CHARACTERS || 5;
+const ENV_MESSAGE = process.env.ENV_MESSAGE || ""
 const config = {
   dictionaries: [starWars]
 }
@@ -15,7 +16,10 @@ for (let i = 1; i <= MAX_STAR_WARS_CHARACTERS; i += 1) {
  return characterNames;
 };
 app.get('/', (req, res) => {
- res.json(getStarWarsCharacters());
+ res.json({
+  characters: getStarWarsCharacters(),
+  message: ENV_MESSAGE
+ });
 });
 app.listen(3000, () => {
  console.log('Server started on port 3000');
